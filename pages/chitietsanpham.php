@@ -31,7 +31,7 @@ include('../config/config.php');
       <div class="product-price-btn">
         
         <button type="button">Mua Ngay</button>
-        <p><span><?php echo $row['Gia']?></span> VND</p>
+        <p><span><?php echo  number_format($row['Gia'] ). 'đ' ?></span></p>
       </div>
     </div>
   </div>
@@ -92,7 +92,7 @@ body {
 }
 
 .product-text h2 {
-  margin: 0 0 47px 38px;
+  margin: 0 0 10px 100px;
   font-size: 13px;
   font-family: 'Raleway', sans-serif;
   font-weight: 400;
@@ -103,7 +103,7 @@ body {
 
 .product-text p {
   height: 125px;
-  margin: 0 0 0 38px;
+  margin: 0 0 0 21px;
   font-family:  Times 'Times New Roman', Times, serif;
   color: #8d8d8d;
   line-height: 1.7em;
@@ -125,7 +125,7 @@ body {
   top: -13px;
   height: 50px;
   font-family: 'Trocchi', serif;
-  margin: 50 0 0 -200px;
+  margin: 50 0 0 -194px;
   font-size: 28px;
   font-weight: lighter;
   color: #474747;
@@ -142,7 +142,7 @@ span {
   display: inline-block;
   height: 50px;
   width: 176px;
-  margin: 0 40px 0 16px;
+  margin: 0 40px 0 80px;
   box-sizing: border-box;
   border: transparent;
   border-radius: 60px;

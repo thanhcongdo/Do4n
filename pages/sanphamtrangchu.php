@@ -64,9 +64,7 @@ $result = mysqli_query($connection,$select);
 
 
             <div class="">
-              <a href="../DoAn/pages/sanphammoi.php">
-                MUA NGAY
-              </a>
+            <button type="button" class="btn btn-outline-dark" a href="../DoAn/pages/sanphammoi.php">  MUA NGAY</button>  </a>
             </div>
           </div>
         </div>
@@ -102,13 +100,12 @@ include('../DoAn/config/config.php');
                             <a href="../DoAn/pages/chitietsanpham.php?page_layout=chitiet&ID=<?php echo $row['ID'] ?>" method="POST" class="row img">
                                 <img src="../DoAn/uploads/<?php echo $row['HinhAnh']?>" alt="" width="300px" height="255px">
                             </a>
-                            <p><span><?php echo $row['Gia']?></span>đ</p>
-                            <a href="#"><?php echo $row['TenSanPham']?></a>
+                            <h5><a ><?php echo $row['TenSanPham']?></a></h5>
+                            <p><span><?php echo  number_format($row['Gia'] ). 'đ' ?></span></p>
                             <form action="/DoAn/pages/cart.php" method="post">
-                                <input type="number" name="soluong" min="1" max="10" value="1">
-                                <input type="submit" name="addcart" value="Đặt hàng">
+                                <input type="number" name="soluong" min="1" max="20" value="1">
                                 <p><input type="hidden" name="tensp" value="<?php echo $row['TenSanPham']?>"></p>
-                                <input type="hidden" name="gia" value="<?php echo $row['Gia']?>">
+                                <button type="hidden" class="btn btn-outline-warning" name="addcart" value="<?php echo $row['Gia']?>"> Đặt hàng</button>
                                 <input type="hidden" name="hinh" value="<?php echo $row['HinhAnh']?>">
                             </form>
                         </div>
@@ -134,9 +131,10 @@ include('../DoAn/config/config.php');
               Chúng tôi luôn đặt chất lượng sản phẩm lên hàng đầu và chúng tôi luôn cung cấp
               cho khách hàng những sản phẩm mới nhất và chất lượng nhất
             </p>
-            <a href="../DoAn/pages/fullsanpham.php">
-              Xem thêm
-            </a>
+            <button type="button" class="btn btn-outline-dark" a href="../DoAn/pages/fullsanpham.php">  Xem thêm</button>  </a>
+            
+            
+           
           </div>
         </div>
         <div class="col-md-6">

@@ -121,13 +121,12 @@ include('../config/config.php');
                             <a href="../pages/chitietsanpham.php?page_layout=chitiet&ID=<?php echo $row['ID'] ?>" method="POST" class="row img">
                                 <img src="../uploads/<?php echo $row['HinhAnh']?>" alt=""width="300px" height="200px">
                             </a>
-                            <p><span><?php echo $row['Gia']?></span>đ</p>
-                            <a href="#"><?php echo $row['TenSanPham']?></a>
-                            <form action="cart.php" method="post">
-                                <input type="number" name="soluong" min="1" max="10" value="1">
-                                <input type="submit" name="addcart" value="Đặt hàng">
-                                <input type="hidden" name="tensp" value="<?php echo $row['TenSanPham']?>">
-                                <input type="hidden" name="gia" value="<?php echo $row['Gia']?>">
+                            <h5><a ><?php echo $row['TenSanPham']?></a></h5>
+                            <p><span><?php echo  number_format($row['Gia'] ). 'đ' ?></span></p>
+                            <form action="/DoAn/pages/cart.php" method="post">
+                                <input type="number" name="soluong" min="1" max="20" value="1">
+                                <p><input type="hidden" name="tensp" value="<?php echo $row['TenSanPham']?>"></p>
+                                <button type="hidden" class="btn btn-outline-warning" name="addcart" value="<?php echo $row['Gia']?>"> Đặt hàng</button>
                                 <input type="hidden" name="hinh" value="<?php echo $row['HinhAnh']?>">
                             </form>
                         </div>
@@ -154,13 +153,13 @@ include('../config/config.php');
 </style>
 <style>
  .carousel-item {
-  height: 65vh;
+  height: 60vh;
   min-height: 350px;
   background: no-repeat center center scroll;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
-  background-size: cover;
+  background-size: contain;
   transition: -webkit-transform 2s ease;
   transition: transform 2s ease;
   transition: transform 2s ease, -webkit-transform 2s ease;
